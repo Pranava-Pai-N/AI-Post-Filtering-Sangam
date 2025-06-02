@@ -31,7 +31,7 @@ def recommend_or_match(
             return {
                 "matched": True,
                 "scheme_id": user_schemes[max_idx]['scheme_id'],
-                "similarity": round(sim_scores[max_idx] * 100, 2)
+                "similarity": int(sim_scores[max_idx] * 100)
             }
 
     sims = cosine_similarity(query_emb, corpus_embeddings)[0]
